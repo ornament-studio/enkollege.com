@@ -10,6 +10,7 @@
   transform: translate(-50%, 0);
   width: 100%;
   padding: 36px 0;
+  z-index: 20;
 
   .header__container {
     display: flex;
@@ -79,17 +80,7 @@
       }
     }
   }
-  .header__menu-mobile {
-    position: fixed;
-    left: -100vw;
-    top: 0;
-  }
-  .header__menu-list {
-  }
-  .header__menu-item {
-  }
-  .header__menu-link {
-  }
+
   .header__button {
     margin-left: auto;
 
@@ -111,8 +102,63 @@
   }
 }
 
-main {
-  display: none;
+/* main section */
+
+.main {
+  background: linear-gradient(
+    180deg,
+    #966cff -16.53%,
+    rgba(246, 189, 255, 0) 100%
+  );
+  padding-bottom: 88px;
+  min-height: 880px;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    background: url("../images/lighting.png") no-repeat top 0 right 0;
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .main__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    height: 100%;
+    z-index: 2;
+  }
+
+  .main__title {
+    margin-bottom: 40px;
+  }
+  .main__slogan {
+    max-width: 405px;
+    margin-bottom: 40px;
+  }
+  .main__btn {
+    width: fit-content;
+
+    span {
+      margin-left: 8px;
+    }
+  }
+  .main__list {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+
+    .main__list-item {
+      padding-top: 15px;
+      border-top: 2px solid #131313;
+    }
+  }
 }
 
 /* Large desktops and laptops */
@@ -137,6 +183,26 @@ main {
 
     .header__menu-list {
       gap: reWidth(60);
+    }
+  }
+
+  /* main section */
+
+  .main {
+    padding-bottom: reWidth(88);
+    min-height: reWidth(880);
+
+    .main__title {
+      margin-bottom: reWidth(40);
+    }
+    .main__slogan {
+      margin-bottom: reWidth(40);
+    }
+
+    .main__list {
+      margin-top: reWidth(80);
+
+      gap: reWidth(40);
     }
   }
 }
@@ -171,14 +237,11 @@ main {
     .header__burgerIcon {
       display: flex;
     }
-    .menuText {
-    }
-    .menuIcon {
-    }
+
     .header__menu {
-      position: fixed;
-      top: 0;
-      right: -101vw;
+      position: absolute;
+      top: -20px;
+      right: -101%;
       width: 100vw;
       height: 100vh;
       padding: 0 20px;
@@ -186,7 +249,7 @@ main {
       background-color: #ffffff;
 
       transition: all 0.6s ease-out;
-      
+
       &.active {
         right: 0;
       }
@@ -220,10 +283,59 @@ main {
       display: none;
     }
   }
+
+  /* main section */
+
+  .main {
+    padding-bottom: 100px;
+    min-height: 800px;
+    height: 100vh;
+
+    &::after {
+      background: url("../images/lighting.png") no-repeat top 0 right 0;
+      background-size: 590px;
+
+    }
+
+
+    .main__title {
+      margin-bottom: 26px;
+    }
+    .main__slogan {
+      margin-bottom: 26px;
+    }
+    .main__btn {
+      width: 100%;
+    }
+    .main__list {
+      margin-top: 60px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px 0;
+
+      .main__list-item {
+        padding-top: 22px;
+
+        &:nth-of-type(1),
+        &:nth-of-type(2) {
+          padding-top: 0px;
+          border-top: none;
+        }
+      }
+    }
+  }
 }
 
 /* Portrait phones and smaller */
 @media (max-width: 480px) {
+  /* main section */
+
+  .main {
+    .main__btn {
+      span {
+        display: none;
+      }
+    }
+  }
 }
 
 /* Iphone 5 */

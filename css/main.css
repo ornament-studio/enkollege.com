@@ -30,14 +30,13 @@ aside {
 
 html,
 body {
-  height: 100%;
-  width: 100%;
   font-size: 100%;
   line-height: 1;
   font-size: 14px;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  position: relative;
 }
 
 input,
@@ -84,6 +83,12 @@ body {
 }
 body.lock {
   overflow: hidden;
+}
+
+.wrapper {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
 }
 
 [class*=__container] {
@@ -166,7 +171,7 @@ p {
   font-size: 20px;
   line-height: 25px;
   color: #222222;
-  font-family: "Gilroy Semibold";
+  font-family: "Gilroy Medium";
   font-weight: 500;
 }
 
@@ -174,7 +179,7 @@ p {
   color: rgb(255, 255, 255);
   border-radius: 8px;
   background: rgb(0, 0, 0);
-  height: 67px;
+  min-height: 67px;
   display: flex;
   padding: 0 40px;
   align-items: center;
@@ -265,12 +270,31 @@ p {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 0px;
+  background: linear-gradient(180deg, #966cff -16.53%, rgba(246, 189, 255, 0) 100%);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #804DFF;
+  border-radius: 8px;
+}
+
 .header {
   position: absolute;
   left: 50%;
   transform: translate(-50%, 0);
   width: 100%;
   padding: 36px 0;
+  z-index: 20;
 }
 .header .header__container {
   display: flex;
@@ -332,11 +356,6 @@ p {
 .header .header__menu-list a:hover {
   color: #966cff;
 }
-.header .header__menu-mobile {
-  position: fixed;
-  left: -100vw;
-  top: 0;
-}
 .header .header__button {
   margin-left: auto;
   color: #161616;
@@ -355,8 +374,54 @@ p {
   border: 2px dashed #966cff;
 }
 
-main {
-  display: none;
+/* main section */
+.main {
+  background: linear-gradient(180deg, #966cff -16.53%, rgba(246, 189, 255, 0) 100%);
+  padding-bottom: 88px;
+  min-height: 880px;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+.main::after {
+  background: url("../images/lighting.png") no-repeat top 0 right 0;
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.main .main__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  height: 100%;
+  z-index: 2;
+}
+.main .main__title {
+  margin-bottom: 40px;
+}
+.main .main__slogan {
+  max-width: 405px;
+  margin-bottom: 40px;
+}
+.main .main__btn {
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.main .main__btn span {
+  margin-left: 8px;
+}
+.main .main__list {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 40px;
+}
+.main .main__list .main__list-item {
+  padding-top: 15px;
+  border-top: 2px solid #131313;
 }
 
 /* Large desktops and laptops */
@@ -373,6 +438,21 @@ main {
   }
   .header .header__menu-list {
     gap: 4.1666666667vw;
+  }
+  /* main section */
+  .main {
+    padding-bottom: 6.1111111111vw;
+    min-height: 61.1111111111vw;
+  }
+  .main .main__title {
+    margin-bottom: 2.7777777778vw;
+  }
+  .main .main__slogan {
+    margin-bottom: 2.7777777778vw;
+  }
+  .main .main__list {
+    margin-top: 5.5555555556vw;
+    gap: 2.7777777778vw;
   }
 }
 /* Landscape tablets and medium desktops */
@@ -398,9 +478,9 @@ main {
     display: flex;
   }
   .header .header__menu {
-    position: fixed;
-    top: 0;
-    right: -101vw;
+    position: absolute;
+    top: -20px;
+    right: -101%;
     width: 100vw;
     height: 100vh;
     padding: 0 20px;
@@ -431,6 +511,43 @@ main {
   .header .header__button {
     display: none;
   }
+  /* main section */
+  .main {
+    padding-bottom: 100px;
+    min-height: 800px;
+    height: 100vh;
+  }
+  .main::after {
+    background: url("../images/lighting.png") no-repeat top 0 right 0;
+    background-size: 590px;
+  }
+  .main .main__title {
+    margin-bottom: 26px;
+  }
+  .main .main__slogan {
+    margin-bottom: 26px;
+  }
+  .main .main__btn {
+    width: 100%;
+  }
+  .main .main__list {
+    margin-top: 60px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px 0;
+  }
+  .main .main__list .main__list-item {
+    padding-top: 22px;
+  }
+  .main .main__list .main__list-item:nth-of-type(1), .main .main__list .main__list-item:nth-of-type(2) {
+    padding-top: 0px;
+    border-top: none;
+  }
 }
 /* Portrait phones and smaller */
+@media (max-width: 480px) {
+  /* main section */
+  .main .main__btn span {
+    display: none;
+  }
+}
 /* Iphone 5 *//*# sourceMappingURL=main.css.map */

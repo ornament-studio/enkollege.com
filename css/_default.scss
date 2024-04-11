@@ -32,14 +32,15 @@ aside {
 
 html,
 body {
-  height: 100%;
-  width: 100%;
   font-size: 100%;
   line-height: 1;
   font-size: 14px;
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+
+  position: relative;
+
 }
 
 input,
@@ -89,6 +90,11 @@ body {
   }
 
   scroll-behavior: smooth;
+}
+.wrapper { 
+  overflow: hidden;
+  width: 100%;
+  position: relative;
 }
 
 [class*="__container"] {
@@ -180,7 +186,7 @@ p {
   font-size: 20px;
   line-height: 25px;
   color: #222222;
-  font-family: "Gilroy Semibold";
+  font-family: "Gilroy Medium";
   font-weight: 500;
 }
 
@@ -190,7 +196,7 @@ p {
   color: rgb(255, 255, 255);
   border-radius: 8px;
   background: rgb(0, 0, 0);
-  height: 67px;
+  min-height: 67px ;
   display: flex;
   padding: 0 40px;
   align-items: center;
@@ -198,7 +204,6 @@ p {
   width: 100%;
   cursor: pointer;
   font-family: "Furore";
-
   font-size: clamp(18px, 1.39vw, 20px);
   line-height: 1.1;
 
@@ -309,3 +314,25 @@ p {
 
 
 // -----------------------------------------------------
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: transparent;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 0px;
+  background: linear-gradient(
+    180deg,
+    #966cff -16.53%,
+    rgba(246, 189, 255, 0) 100%
+  );
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background:#804DFF;
+  border-radius: 8px;
+}
