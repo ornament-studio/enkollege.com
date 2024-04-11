@@ -1,0 +1,436 @@
+/* reset styles */
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li,
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+/* --------- end reset styles -------------- */
+/* default  */
+body {
+  scroll-behavior: smooth;
+}
+body.lock {
+  overflow: hidden;
+}
+
+[class*=__container] {
+  position: relative;
+  max-width: 1440px;
+  padding: 0 60px;
+  margin: 0 auto;
+}
+
+@font-face {
+  font-family: "Furore";
+  src: url(../fonts/furore/furore-regular.ttf);
+  src: url(../fonts/furore/furore-regular.woff);
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Gilroy Bold";
+  src: url(../fonts/gilroy/gilroy-bold.ttf);
+  src: url(../fonts/gilroy/gilroy-bold.woff);
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Gilroy Extrabold";
+  src: url(../fonts/gilroy/gilroy-extrabold.ttf);
+  src: url(../fonts/gilroy/gilroy-extrabold.woff);
+  font-weight: bold;
+}
+@font-face {
+  font-family: "Gilroy Medium";
+  src: url(../fonts/gilroy/gilroy-medium.ttf);
+  src: url(../fonts/gilroy/gilroy-medium.woff);
+  font-weight: medium;
+}
+@font-face {
+  font-family: "Gilroy Semibold";
+  src: url(../fonts/gilroy/gilroy-semibold.ttf);
+  src: url(../fonts/gilroy/gilroy-semibold.woff);
+  font-weight: normal;
+}
+a {
+  color: rgb(22, 22, 22);
+  font-family: "Furore";
+  font-size: clamp(42px, 6.25vw, 90px);
+  line-height: 31px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Furore";
+  font-size: inherit;
+  font-weight: 400;
+  color: #161616;
+}
+
+h1 {
+  font-size: clamp(42px, 6.25vw, 90px);
+  line-height: 1.12;
+}
+
+h2 {
+  font-size: clamp(40px, 4.03vw, 58px);
+  line-height: 1.12;
+}
+
+h3 {
+  font-size: clamp(40px, 4.03vw, 32px);
+  line-height: 1.12;
+}
+
+h4 {
+  font-size: clamp(28px, 2.22vw, 58px);
+  line-height: 1.12;
+}
+
+p {
+  font-size: 20px;
+  line-height: 25px;
+  color: #222222;
+  font-family: "Gilroy Semibold";
+  font-weight: 500;
+}
+
+[class*=_btn] {
+  color: rgb(255, 255, 255);
+  border-radius: 8px;
+  background: rgb(0, 0, 0);
+  height: 67px;
+  display: flex;
+  padding: 0 40px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+  font-family: "Furore";
+  font-size: clamp(18px, 1.39vw, 20px);
+  line-height: 1.1;
+}
+[class*=_btn]:hover {
+  transform: scale(0.98);
+  transition: all 0.2s ease-out;
+}
+
+/* Splide sliders  */
+.splide {
+  width: 100%;
+}
+
+.splide__arrows {
+  position: absolute;
+  top: -80px;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  gap: 5px;
+}
+.splide__arrows .splide__arrow {
+  width: 50px;
+  height: 50px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  display: block;
+  font-size: 0;
+  border-radius: 10px;
+  background-image: url("../images/arrow-left.svg");
+  background-position: center;
+  background-size: 16px;
+  position: relative;
+}
+.splide__arrows .splide__arrow svg {
+  display: none;
+}
+.splide__arrows .splide__arrow.splide__arrow--prev {
+  transform: rotate(180deg);
+  background-color: #b6b6b6;
+}
+.splide__arrows .splide__arrow.splide__arrow--prev:hover {
+  transform: rotate(180deg) translateY(3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.splide__arrows .splide__arrow.splide__arrow--next {
+  transform: rotate(-90deg);
+  background-color: #fff;
+}
+.splide__arrows .splide__arrow.splide__arrow--next:hover {
+  transform: translateY(-3px) rotate(-90deg);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Arrows */
+.slick-prev,
+.slick-next {
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  cursor: pointer;
+  line-height: 0;
+  display: block;
+  padding: 0;
+  color: transparent;
+  border: none;
+  outline: none;
+  background: transparent;
+  z-index: 10;
+  border-radius: 50px;
+}
+.slick-prev:active,
+.slick-next:active {
+  opacity: 0.7;
+}
+.slick-prev:hover,
+.slick-next:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.header {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 100%;
+  padding: 36px 0;
+}
+.header .header__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header .header__logo {
+  margin-left: 30px;
+  margin-right: auto;
+  width: 8.33vw;
+  max-width: 120px;
+  min-width: 100px;
+}
+.header .header__burgerIcon {
+  display: none;
+}
+.header .header__burgerIcon.menuText {
+  border: 2px dashed #161616;
+  border-radius: 8px;
+  font-size: 16px;
+  line-height: 18px;
+  color: #161616;
+  padding: 10px 16px;
+  font-family: "Furore";
+}
+.header .header__burgerIcon.menuClose {
+  margin: 20px 0;
+  height: 40px;
+  width: 40px;
+  position: relative;
+  margin-left: auto;
+}
+.header .header__burgerIcon.menuClose span {
+  background-color: #161616;
+  position: absolute;
+  width: 100%;
+  height: 3.2px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.header .header__burgerIcon.menuClose span:nth-of-type(1) {
+  transform: translate(-50%, -50%) rotate(-135deg);
+}
+.header .header__burgerIcon.menuClose span:nth-of-type(2) {
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+.header .header__menu-list {
+  display: flex;
+  gap: 60px;
+}
+.header .header__menu-list a {
+  color: #161616;
+  font-family: "Furore";
+  font-size: clamp(16px, 1.25vw, 18px);
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+}
+.header .header__menu-list a:hover {
+  color: #966cff;
+}
+.header .header__menu-mobile {
+  position: fixed;
+  left: -100vw;
+  top: 0;
+}
+.header .header__button {
+  margin-left: auto;
+  color: #161616;
+  font-family: "Furore";
+  font-size: clamp(16px, 1.25vw, 18px);
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  padding: 13px 58px;
+  border: 2px dashed #161616;
+  border-radius: 8px;
+}
+.header .header__button:hover {
+  transform: scale(0.98);
+  color: #966cff;
+  transition: all 0.2s ease-out;
+  border: 2px dashed #966cff;
+}
+
+main {
+  display: none;
+}
+
+/* Large desktops and laptops */
+/* for inner padding */
+@media (min-width: 769px) and (max-width: 1200px) {
+  [class*=__container] {
+    padding: 0 4.1666666667vw;
+  }
+  .header {
+    padding: 2.5vw 0;
+  }
+  .header .header__logo {
+    margin-left: 2.0833333333vw;
+  }
+  .header .header__menu-list {
+    gap: 4.1666666667vw;
+  }
+}
+/* Landscape tablets and medium desktops */
+/* Portrait tablets and small desktops */
+/* Landscape phones and portrait tablets */
+/* Landscape phones and portrait tablets */
+@media (max-width: 768px) {
+  [class*=__container] {
+    padding: 0 20px;
+  }
+  .header {
+    padding: 20px 0;
+  }
+  .header .header__container {
+    justify-content: space-between;
+  }
+  .header .header__logo {
+    margin-left: 0px;
+    width: 120px;
+    z-index: 20;
+  }
+  .header .header__burgerIcon {
+    display: flex;
+  }
+  .header .header__menu {
+    position: fixed;
+    top: 0;
+    right: -101vw;
+    width: 100vw;
+    height: 100vh;
+    padding: 0 20px;
+    text-align: right;
+    background-color: #ffffff;
+    transition: all 0.6s ease-out;
+  }
+  .header .header__menu.active {
+    right: 0;
+  }
+  .header .header__menu-list {
+    flex-direction: column;
+    gap: 10px;
+    border-top: 1.27px dashed #161616;
+    padding-top: 30px;
+  }
+  .header .header__menu-list a {
+    font-size: 38px;
+    font-weight: 400;
+    line-height: 43.74px;
+    letter-spacing: -0.04em;
+  }
+  .header .header__menu-mobile {
+    position: fixed;
+    left: -100vw;
+    top: 0;
+  }
+  .header .header__button {
+    display: none;
+  }
+}
+/* Portrait phones and smaller */
+/* Iphone 5 *//*# sourceMappingURL=main.css.map */

@@ -1,0 +1,231 @@
+@function reWidth($number) {
+  $maket: 1440;
+  $relative: 100;
+  @return $number / $maket * $relative * 1vw;
+}
+
+.header {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 100%;
+  padding: 36px 0;
+
+  .header__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .header__logo {
+    margin-left: 30px;
+    margin-right: auto;
+
+    width: 8.33vw;
+    max-width: 120px;
+    min-width: 100px;
+  }
+  .header__burgerIcon {
+    display: none;
+
+    &.menuText {
+      border: 2px dashed #161616;
+      border-radius: 8px;
+      font-size: 16px;
+      line-height: 18px;
+      color: #161616;
+      padding: 10px 16px;
+      font-family: "Furore";
+    }
+    &.menuClose {
+      margin: 20px 0;
+      height: 40px;
+      width: 40px;
+      position: relative;
+
+      margin-left: auto;
+
+      span {
+        background-color: #161616;
+        position: absolute;
+        width: 100%;
+        height: 3.2px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        &:nth-of-type(1) {
+          transform: translate(-50%, -50%) rotate(-135deg);
+        }
+        &:nth-of-type(2) {
+          transform: translate(-50%, -50%) rotate(135deg);
+        }
+      }
+    }
+  }
+
+  .header__menu-list {
+    display: flex;
+    gap: 60px;
+
+    a {
+      color: #161616;
+      font-family: "Furore";
+      font-size: clamp(16px, 1.25vw, 18px);
+      letter-spacing: 0.01em;
+      line-height: 1.1;
+
+      &:hover {
+        color: #966cff;
+      }
+    }
+  }
+  .header__menu-mobile {
+    position: fixed;
+    left: -100vw;
+    top: 0;
+  }
+  .header__menu-list {
+  }
+  .header__menu-item {
+  }
+  .header__menu-link {
+  }
+  .header__button {
+    margin-left: auto;
+
+    color: #161616;
+    font-family: "Furore";
+    font-size: clamp(16px, 1.25vw, 18px);
+    letter-spacing: 0.01em;
+    line-height: 1.1;
+    padding: 13px 58px;
+    border: 2px dashed #161616;
+    border-radius: 8px;
+
+    &:hover {
+      transform: scale(0.98);
+      color: #966cff;
+      transition: all 0.2s ease-out;
+      border: 2px dashed #966cff;
+    }
+  }
+}
+
+main {
+  display: none;
+}
+
+/* Large desktops and laptops */
+@media (min-width: 1200px) and (max-width: 1300px) {
+}
+
+@media (max-width: 1200px) {
+}
+
+/* for inner padding */
+@media (min-width: 769px) and (max-width: 1200px) {
+  [class*="__container"] {
+    padding: 0 reWidth(60);
+  }
+
+  .header {
+    padding: reWidth(36) 0;
+
+    .header__logo {
+      margin-left: reWidth(30);
+    }
+
+    .header__menu-list {
+      gap: reWidth(60);
+    }
+  }
+}
+
+/* Landscape tablets and medium desktops */
+@media (min-width: 992px) and (max-width: 1199px) {
+}
+
+/* Portrait tablets and small desktops */
+@media (min-width: 769px) and (max-width: 991px) {
+}
+/* Landscape phones and portrait tablets */
+@media (min-width: 769px) {
+}
+/* Landscape phones and portrait tablets */
+@media (max-width: 768px) {
+  [class*="__container"] {
+    padding: 0 20px;
+  }
+
+  .header {
+    padding: 20px 0;
+
+    .header__container {
+      justify-content: space-between;
+    }
+    .header__logo {
+      margin-left: 0px;
+      width: 120px;
+      z-index: 20;
+    }
+    .header__burgerIcon {
+      display: flex;
+    }
+    .menuText {
+    }
+    .menuIcon {
+    }
+    .header__menu {
+      position: fixed;
+      top: 0;
+      right: -101vw;
+      width: 100vw;
+      height: 100vh;
+      padding: 0 20px;
+      text-align: right;
+      background-color: #ffffff;
+
+      transition: all 0.6s ease-out;
+      
+      &.active {
+        right: 0;
+      }
+    }
+    .header__menu-list {
+      flex-direction: column;
+      gap: 10px;
+
+      border-top: 1.27px dashed #161616;
+      padding-top: 30px;
+
+      a {
+        font-size: 38px;
+        font-weight: 400;
+        line-height: 43.74px;
+        letter-spacing: -0.04em;
+      }
+    }
+    .header__menu-mobile {
+      position: fixed;
+      left: -100vw;
+      top: 0;
+    }
+    .header__menu-list {
+    }
+    .header__menu-item {
+    }
+    .header__menu-link {
+    }
+    .header__button {
+      display: none;
+    }
+  }
+}
+
+/* Portrait phones and smaller */
+@media (max-width: 480px) {
+}
+
+/* Iphone 5 */
+@media (max-width: 320px) {
+}

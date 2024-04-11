@@ -1,0 +1,73 @@
+/* Slider */
+.slick-slider
+{
+    position: relative;
+}
+
+.slick-list
+{
+    overflow: hidden;
+}
+.slick-list:focus
+{
+    outline: none;
+}
+.slick-list.dragging
+{
+    cursor: pointer;
+    cursor: hand;
+}
+
+.slick-track
+{
+    display: flex;  
+}
+
+.slick-track:after
+{
+    clear: both;
+}
+.slick-loading .slick-track
+{
+    visibility: hidden;
+}
+[dir='rtl'] .slick-slide
+{
+    float: right;
+}
+.slick-slide img
+{
+    display: inline-block;
+}
+.slick-slide.slick-loading img
+{
+    display: none;
+}
+.slick-slide.dragging img
+{
+    pointer-events: none;
+}
+.slick-initialized .slick-slide
+{
+    /* display: block; */
+}
+.slick-loading .slick-slide
+{
+    visibility: hidden;
+}
+.slick-arrow.slick-hidden {
+    /* display: none; */
+}
+
+ .slider .slick-arrow{ 
+    position: absolute;
+    top: 50;
+    z-index: 20;
+} 
+
+.slider .slick-arrow.arrow-prev{
+    left: 0;
+} 
+.slider .slick-arrow.arrow-next{
+    right: 0;
+}

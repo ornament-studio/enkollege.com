@@ -1,0 +1,311 @@
+/* reset styles */
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1;
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+input::-ms-clear {
+  display: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+ul li,
+li {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+}
+
+/* --------- end reset styles -------------- */
+
+/* default  */
+
+body {
+  &.lock {
+    overflow: hidden;
+  }
+
+  scroll-behavior: smooth;
+}
+
+[class*="__container"] {
+  position: relative;
+  max-width: 1440px;
+  padding: 0 60px;
+  margin: 0 auto;
+}
+
+// ---------- FONT
+@font-face {
+  font-family: "Furore";
+  src: url(../fonts/furore/furore-regular.ttf);
+  src: url(../fonts/furore/furore-regular.woff);
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "Gilroy Bold";
+  src: url(../fonts/gilroy/gilroy-bold.ttf);
+  src: url(../fonts/gilroy/gilroy-bold.woff);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Gilroy Extrabold";
+  src: url(../fonts/gilroy/gilroy-extrabold.ttf);
+  src: url(../fonts/gilroy/gilroy-extrabold.woff);
+  font-weight: bold;
+}
+
+@font-face {
+  font-family: "Gilroy Medium";
+  src: url(../fonts/gilroy/gilroy-medium.ttf);
+  src: url(../fonts/gilroy/gilroy-medium.woff);
+  font-weight: medium;
+}
+
+@font-face {
+  font-family: "Gilroy Semibold";
+  src: url(../fonts/gilroy/gilroy-semibold.ttf);
+  src: url(../fonts/gilroy/gilroy-semibold.woff);
+  font-weight: normal;
+}
+// ----- FONT COLOR -----
+$textBlack: rgb(22, 22, 22);
+$textWhite: rgb(255, 255, 255);
+$textPurple: rgb(128, 77, 255);
+
+a {
+  color: $textBlack;
+  font-family: "Furore";
+  font-size: clamp(42px, 6.25vw, 90px); 
+   line-height: 31px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Furore";
+  font-size: inherit;
+  font-weight: 400;
+  color: #161616;
+}
+
+h1 {
+  font-size: clamp(42px, 6.25vw, 90px);
+  line-height: 1.12;
+}
+
+h2 {
+  font-size: clamp(40px, 4.03vw, 58px);
+  line-height: 1.12;
+}
+
+h3 {
+  font-size: clamp(40px, 4.03vw, 32px);
+  line-height: 1.12;
+}
+h4 {
+  font-size: clamp(28px, 2.22vw, 58px);
+  line-height: 1.12;
+}
+
+p {
+  font-size: 20px;
+  line-height: 25px;
+  color: #222222;
+  font-family: "Gilroy Semibold";
+  font-weight: 500;
+}
+
+// -----------------------------------
+
+[class*="_btn"]  {
+  color: rgb(255, 255, 255);
+  border-radius: 8px;
+  background: rgb(0, 0, 0);
+  height: 67px;
+  display: flex;
+  padding: 0 40px;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  cursor: pointer;
+  font-family: "Furore";
+
+  font-size: clamp(18px, 1.39vw, 20px);
+  line-height: 1.1;
+
+
+
+
+  &:hover { 
+	transform: scale(0.98);
+	transition: all 0.2s ease-out;
+}
+}
+
+%whiteBtn {
+  border-radius: 6px;
+  background: rgb(255, 255, 255);
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  max-width: 200px;
+  cursor: pointer;
+}
+
+/* Splide sliders  */
+
+.splide {
+  width: 100%;
+}
+.splide__arrows {
+  position: absolute;
+  top: -80px;
+  right: 0;
+  z-index: 2;
+  display: flex;
+  gap: 5px;
+
+  .splide__arrow {
+    width: 50px;
+    height: 50px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    display: block;
+    font-size: 0;
+    border-radius: 10px;
+    background-image: url("../images/arrow-left.svg");
+    background-position: center;
+    background-size: 16px;
+    position: relative;
+
+
+    svg {
+      display: none;
+    }
+
+    &.splide__arrow--prev {
+      transform: rotate(180deg);
+      background-color: #b6b6b6;
+
+      &:hover {
+        transform: rotate(180deg) translateY(3px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+    }
+
+    &.splide__arrow--next {
+      transform: rotate(-90deg);
+      background-color: #fff;
+
+      &:hover {
+        transform: translateY(-3px) rotate(-90deg);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+}
+
+/* Arrows */
+.slick-prev,
+.slick-next {
+  width: 50px;
+  height: 50px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: absolute;
+  cursor: pointer;
+  line-height: 0;
+  display: block;
+  padding: 0;
+  color: transparent;
+  border: none;
+  outline: none;
+  background: transparent;
+  z-index: 10;
+  border-radius: 50px;
+
+  &:active {
+    opacity: 0.7;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+}
+
+
+
+// -----------------------------------------------------
