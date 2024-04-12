@@ -5,8 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>enko education</title>
-    <link rel="stylesheet" href="css/slick-theme.css">
-    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/splide.min.css">
     <link rel="stylesheet" href="css/main.css">
 </head>
 
@@ -68,46 +67,52 @@
                 <div class="community__container">
                     <div class="community__presents">
                         <div class="community__presents-desk">
-                            <h4 class="community__title">
+                            <h2 class="community__title">
                                 <span>Будь попереду:</span> <br>стань учасником музичного ком'юніті
-                            </h4>
+                            </h2>
                             <p class="community__text">
-                                <span>ENKO club — це не просто курси та уроки. <br></span> це середовище,
+                                <span>ENKO club — це не просто курси та уроки. </span> це середовище,
                                 в якому ти зможеш швидко розвиватись, знаходити нові знайомства, стати
                                 частиною великого музичного ком'юніті
                             </p>
                         </div>
+                        <div class="community__presents-img">
+                            <img src="images/community.png" alt="man">
+                        </div>
                     </div>
-                    <div class="community__list">
-                        <ol>
-                            <li class="community__list-item">Закритий клуб <br> в Telegram
-                                <span>Ексклюзивні навчальні матеріали від ENKO. Спільнота однодумців,
-                                    з якими ти зможеш колабитись, створювати нові музичні проєкти і пісні
-                                </span>
-                            </li>
-                            <li class="community__list-item">Швидке <br>навчання
-                                <span>
-                                    Кожен місяць новий музичний курс з інфою, яку ти ніде не отримаєш
-                                </span>
-                            </li>
-                            <li class="community__list-item">Музичні <br>курси
-                                <span>
-                                    Досвід найкращих саундпродюсерів, артистів та музикантів країни
-                                </span>
-                            </li>
-                            <li class="community__list-item">Зручний <br> формат
-                                <span>
-                                    Курси у відеоформаті, які можна проходити в зручний для тебе час
-                                </span>
-                            </li>
-                            <li class="community__list-item">Зворотний <br>зв’язок
-                                <span>
-                                    Онлайн-зустріч з менторами курсу раз на місяць
-                                </span>
-                            </li>
-                        </ol>
-                    </div>
-                    <img class="community__img" src="images/lighting.png" alt="lighting">
+                    <ol class="community__list">
+                        <li class="community__list-item">
+                            <span>01</span>
+                            <h5>Закритий клуб <br> в Telegram</h5>
+                            <p>Ексклюзивні навчальні матеріали від ENKO. Спільнота однодумців,
+                                з якими ти зможеш колабитись, створювати нові музичні проєкти і пісні</p>
+                        </li>
+                        <li class="community__list-item">
+                            <span>02</span>
+                            <h5>Швидке <br>навчання</h5>
+                            <p>Кожен місяць новий музичний курс з інфою, яку ти ніде не отримаєш</p>
+                        </li>
+                        <li class="community__list-item">
+                            <span>03</span>
+                            <h5>Музичні <br>курси</h5>
+                            <p>Досвід найкращих саундпродюсерів, артистів та музикантів країни</p>
+                        </li>
+                        <li class="community__list-item">
+                            <span>04</span>
+                            <h5>Зручний <br> формат</h5>
+                            <p>Курси у відеоформаті, які можна проходити в зручний для тебе час</p>
+                        </li>
+                        <li class="community__list-item">
+                            <span>05</span>
+                            <h5>Зворотний <br>зв’язок</h5>
+                            <p> Онлайн-зустріч з менторами курсу раз на місяць</p>
+                        </li>
+                        <li class="community__list-item">
+                            <span>06</span>
+                            <h5>База з корисною <br>та актуальною інформацією</h5>
+                            <p> Чек-листи та шаблони документів</p>
+                        </li>
+                    </ol>
                 </div>
             </section>
             <!-- COURSES SECTION -->
@@ -119,81 +124,72 @@
                     <p class="courses__slogan">
                         Пройди 12 курсів та використай ці знання, щоб стати відомим артистом
                     </p>
-                    <div class="courses__slider">
-                        <div class="courses__slide-item">
-                            <div class="courses__slide-img">
-                                <img src="images/vanya.png" alt="Vanya">
-                                <div class="courses__slide-die">
-                                    <span class="courses__num">8</span>
-                                    <span class="courses__text">УРОКІВ</span>
-                                </div>
-                            </div>
-                            <span class="courses__slide-name">досвід Ванька Клименка </span>
-                            <p class="courses__slide-subtitle">Просування <br> релізу</p>
-                            <a class="courses__slide__btn" href="#">Більше про курс</a>
+                    <div class="courses__slider splide-slider splide">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide courses__slide-item">
+                                    <div class="courses__slide-img">
+                                        <img src="images/vanya.png" alt="Vanya">
+                                        <div class="courses__slide-die">
+                                            <span class="courses__num">8</span>
+                                            <span class="courses__text">УРОКІВ</span>
+                                        </div>
+                                    </div>
+                                    <p class="courses__slide-name">досвід Ванька Клименка </p>
+                                    <h3 class="courses__slide-subtitle">Просування <br> релізу</h3>
+                                    <a class="courses__btn courses__btn-white" href="#">Більше про курс</a>
+                                </li>
+                                <li class="splide__slide courses__slide-item">
+                                    <div class="courses__slide-img">
+                                        <!-- <img src="images/vanya.png" alt="Vanya">
+                                        <div class="courses__slide-die">
+                                            <span class="courses__num">8</span>
+                                            <span class="courses__text">УРОКІВ</span>
+                                        </div> -->
+                                    </div>
+                                    <p class="courses__slide-name">Скоро анонс курсу</p>
+                                    <!-- <h3 class="courses__slide-subtitle">Просування <br> релізу</h3>
+                                    <a class="courses__btn courses__btn-white" href="#">Більше про курс</a> -->
+                                </li>
+                                <li class="splide__slide courses__slide-item">
+                                    <div class="courses__slide-img">
+                                        <!-- <img src="images/vanya.png" alt="Vanya">
+                                        <div class="courses__slide-die">
+                                            <span class="courses__num">8</span>
+                                            <span class="courses__text">УРОКІВ</span>
+                                        </div> -->
+                                    </div>
+                                    <p class="courses__slide-name">Скоро анонс курсу</p>
+                                    <!-- <h3 class="courses__slide-subtitle">Просування <br> релізу</h3>
+                                    <a class="courses__btn courses__btn-white" href="#">Більше про курс</a> -->
+                                </li>
+                                <li class="splide__slide courses__slide-item">
+                                    <div class="courses__slide-img">
+                                        <!-- <img src="images/vanya.png" alt="Vanya">
+                                        <div class="courses__slide-die">
+                                            <span class="courses__num">8</span>
+                                            <span class="courses__text">УРОКІВ</span>
+                                        </div> -->
+                                    </div>
+                                    <p class="courses__slide-name">Скоро анонс курсу</p>
+                                    <!-- <h3 class="courses__slide-subtitle">Просування <br> релізу</h3>
+                                    <a class="courses__btn courses__btn-white" href="#">Більше про курс</a> -->
+                                </li>
+                                <li class="splide__slide courses__slide-item">
+                                </li>
+                            </ul>
                         </div>
-                        <div class="courses__slide-item">
-                            <div class="courses__slide-img">
-                                <img src="images/lock.png" alt="lock">
-                                <!-- <div class="courses__slide-die">
-                                        <span class="courses__num">8</span>
-                                        <span class="courses__text">УРОКІВ</span>
-                                    </div> -->
-                            </div>
-                            <span class="courses__slide-name">Скоро анонс курсу </span>
-                            <!-- <p class="courses__slide-subtitle">Просування релізу</p>
-                                <a class="courses__slide__btn" href="#">Більше про курс</a> -->
-                        </div>
-                        <div class="courses__slide-item">
-                            <div class="courses__slide-img">
-                                <img src="images/lock.png" alt="lock">
-                                <!-- <div class="courses__slide-die">
-                                        <span class="courses__num">8</span>
-                                        <span class="courses__text">УРОКІВ</span>
-                                    </div> -->
-                            </div>
-                            <span class="courses__slide-name">Скоро анонс курсу </span>
-                            <!-- <p class="courses__slide-subtitle">Просування релізу</p>
-                                <a class="courses__slide__btn" href="#">Більше про курс</a> -->
-                        </div>
-                        <div class="courses__slide-item">
-                            <div class="courses__slide-img">
-                                <img src="images/lock.png" alt="lock">
-                                <!-- <div class="courses__slide-die">
-                                        <span class="courses__num">8</span>
-                                        <span class="courses__text">УРОКІВ</span>
-                                    </div> -->
-                            </div>
-                            <span class="courses__slide-name">Скоро анонс курсу </span>
-                            <!-- <p class="courses__slide-subtitle">Просування релізу</p>
-                                <a class="courses__slide__btn" href="#">Більше про курс</a> -->
-                        </div>
-                        <div class="courses__slide-item">
-                            <div class="courses__slide-img">
-                                <img src="images/lock.png" alt="lock">
-                                <!-- <div class="courses__slide-die">
-                                        <span class="courses__num">8</span>
-                                        <span class="courses__text">УРОКІВ</span>
-                                    </div> -->
-                            </div>
-                            <span class="courses__slide-name">Скоро анонс курсу </span>
-                            <!-- <p class="courses__slide-subtitle">Просування релізу</p>
-                                <a class="courses__slide__btn" href="#">Більше про курс</a> -->
+                        <div class="my-slider-progress">
+                            <div class="my-slider-progress-bar"></div>
                         </div>
                     </div>
-
-                    <div class="courses__slide__progress" role="progressbar" aria-valuemin="0" aria-valuemax="100">
-                        <span class="slider__label sr-only">
-                    </div>
-                </div>
             </section>
             <!-- ABOUTCOURSE -->
             <section class="aboutCourse">
                 <div class="aboutCourse__container">
-                    <img class="aboutCourse__bgImg" src="images/lighting-about.png" alt="lighting">
                     <div class="aboutCourse__content">
-                        <span class="aboutCourse__caption">Про курс</span>
-                        <h4 class="aboutCourse__title">Просування <br> релізу</h4>
+                        <p class="aboutCourse__caption">Про курс</p>
+                        <h2 class="aboutCourse__title">Просування <br> релізу</h2>
                         <p class="aboutCourse__text">
                             Курс веде Ваньок Кліменко — співзасновник лейбла ENKO, музичний продюсер
                             Kalush Orchestra, alyona alyona, SKOFKA, автор понад 300 пісень, саундпродюсер KOLA,
@@ -202,20 +198,293 @@
                         </p>
                     </div>
                     <div class="aboutCourse__img">
-                        <img src="images/about.png" alt="people">
+                        <img src="images/kola.jpeg" alt="people">
                     </div>
                 </div>
             </section>
+            <!-- program -->
             <section class="program">
                 <div class="program__container">
+                    <h2 class="program__title">Програма курсу</h2>
+                    <ul class="program__list">
+                        <li>
+                            <span>01</span>
+                            <p>Хто такий популярний артист та як зацікавити аудиторію? Досвід Івана Клименка</p>
+                        </li>
+                        <li>
+                            <span>02</span>
+                            <p>Як зрозуміти, що пісня сильна?</p>
+                        </li>
+                        <li>
+                            <span>03</span>
+                            <p>Візуальне оформлення релізу, як зацікавити глядачів</p>
+                        </li>
+                        <li>
+                            <span>04</span>
+                            <p>Дистрибуція , просування пісні на стрімінг-платформах</p>
+                        </li>
+                        <li>
+                            <span>05</span>
+                            <p>PR-реліз</p>
+                        </li>
+                        <li>
+                            <span>06</span>
+                            <p>Просування артиста в соцмережах</p>
+                        </li>
+                        <li>
+                            <span>07</span>
+                            <p>Як потрапити в рекомендаційні стрічки</p>
+                        </li>
+                        <li>
+                            <span>08</span>
+                            <p>Колаборації з блогерами та медійними особистостями</p>
+                        </li>
+                        <li>
+                            <span>09</span>
+                            <p>Стабільність в просуванні, як залишатися в інфополі</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <!--target group -->
+            <section class="target">
+                <div class="target__container">
+                    <h2 class="target__title">Для кого курс</h2>
+                    <div class="target__slider splide-slider splide">
+                        <div class="splide__track">
+                            <ul class="splide__list">
+                                <li class="splide__slide target__slide-item">
+                                    <div class="image">
+                                        <img src="images/cart-1.png" alt="">
+                                    </div>
+                                    <h3 class="mane">молодий артист</h3>
+                                    <p>який хоче просувати свою творчість</p>
+                                </li>
+                                <li class="splide__slide target__slide-item">
+                                    <div class="image">
+                                        <img src="images/cart-2.png" alt="">
+                                    </div>
+                                    <h3 class="mane">менеджер артиста</h3>
+                                    <p>який мріє вивести треки в топчарти </p>
+                                </li>
+                                <li class="splide__slide target__slide-item">
+                                    <div class="image">
+                                        <img src="images/cart-3.png" alt="">
+                                    </div>
+                                    <h3 class="mane">маркетолог</h3>
+                                    <p>який хоче почати розвиватись в музичній сфері</p>
+                                </li>
+                                <li class="splide__slide target__slide-item">
+                                    <div class="image">
+                                        <img src="images/cart-4.png" alt="">
+                                    </div>
+                                    <h3 class="mane">лейбл</h3>
+                                    <p>який хоче просувати артистів </p>
+                                </li>
+                                <li class="splide__slide target__slide-item"></li>
+                            </ul>
+                        </div>
+                        <div class="my-slider-progress">
+                            <div class="my-slider-progress-bar"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!--join course-->
+            <section class="join">
+                <div class="join__container">
+                    <h2 class="join__title">Як приєднатися до курсу</h2>
+                    <div class="join__items">
+                        <div class="join__item">
+                            <p>Крок 1</p>
+                            <h6>Чат-бот</h6>
+                        </div>
+                        <div class="join__item">
+                            <p>Крок 2</p>
+                            <h6>Контактна інформація</h6>
+                        </div>
+                        <div class="join__item">
+                            <p>Крок 3</p>
+                            <h6>Вибір тарифу</h6>
+                        </div>
+                        <div class="join__item">
+                            <p>Крок 4</p>
+                            <h6>Оплата</h6>
+                        </div>
+                        <div class="join__item">
+                            <p>Крок 5</p>
+                            <h6>Доступ
+                                до ком'юніті
+                                та курсів</h6>
+                        </div>
+                    </div>
+                    <a class="join__btn" href="#">Приєднатися</a>
+                </div>
+            </section>
+            <!--rates section-->
+            <section class="rates">
+                <div class="rates__container">
+                    <h2 class="rates__title">Тарифи</h2>
+                    <div class="rates__items">
+                        <div class="rates__item">
+                            <div class="body">
+                                <h3 class="title"><span>Підписка</span><br>на 1 курс </h3>
+                                <ul class="list">
+                                    <li class="active">Доступ до 1 курсу назавжди </li>
+                                    <li class=" ">Доступ до закритого клубу</li>
+                                    <li class=" ">Онлайн-зустрічі з менторами</li>
+                                    <li class=" ">Інсайдерська інфорамація для закритого клубу</li>
+                                    <li class=" ">Шаблони ідей</li>
+                                    <li class=" ">Обговорення новин </li>
+                                </ul>
+                            </div>
+                            <div class="cost">
+                                <p class="full">Вартість: 110$</p>
+                            </div>
+                        </div>
+                        <div class="rates__item">
+                            <div class="body">
+                                <h3 class="title"><span>Підписка</span><br>на 1 місяць</h3>
+                                <ul class="list">
+                                    <li>Доступ до всіх курсів <b>на 1 місяць </b></li>
+                                    <li>Доступ до закритого клубу</li>
+                                    <li>Онлайн-зустрічі з менторами</li>
+                                    <li>Інсайдерська інфорамація для закритого клубу</li>
+                                    <li>Шаблони ідей</li>
+                                    <li>Обговорення новин </li>
+                                </ul>
+                            </div>
+                            <div class="cost">
+                                <p class="full">Вартість: 32$</p>
+                            </div>
+                        </div>
+                        <div class="rates__item">
+                            <div class="body">
+                                <h3 class="title"><span>Підписка</span><br>на 1 рік</h3>
+                                <ul class="list">
+                                    <li>Доступ до всіх курсів <b>на 1 рік</b></li>
+                                    <li>Доступ до закритого клубу</li>
+                                    <li>Онлайн-зустрічі з менторами</li>
+                                    <li>Інсайдерська інфорамація для закритого клубу</li>
+                                    <li>Шаблони ідей</li>
+                                    <li>Обговорення новин </li>
+                                </ul>
+                            </div>
+                            <div class="cost">
+                                <p class="sale">знижка 50%, вартість за місяць 16$</p>
+                                <p class="full">Вартість: 190$</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="rates__btn rates__btn-white" href="#">Стати учасником</a>
+                </div>
+            </section>
+            <!--FAQ section-->
+            <section class="faq">
+                <div class="faq__container">
+                    <h2 class="faq__title">Питання відповідь</h2>
+                    <div class="faq__items">
+                        <div class="faq__item close">
+                            <div class="faq__head">
+                                <span class="number">01</span>
+                                <h6>Скільки курс буде доступним після завершення? </h6>
+                                <span class="icon"></span>
+                            </div>
+                            <div class="faq__content">
+                                <p>Курс залишається в доступі назавжди. </p>
+                            </div>
+                        </div>
+                        <div class="faq__item close">
+                            <div class="faq__head">
+                                <span class="number">02</span>
+                                <h6>Чи підійде мені курс, якщо я не співак? </h6>
+                                <span class="icon"></span>
+                            </div>
+                            <div class="faq__content">
+                                <p>Так, курс підходить для всіх, хто працює, або мріє працювати в сфері шоубізнесу </p>
+                            </div>
+                        </div>
+                        <div class="faq__item close">
+                            <div class="faq__head">
+                                <span class="number">03</span>
+                                <h6>Коли потрібно проходити курси? </h6>
+                                <span class="icon"></span>
+                            </div>
+                            <div class="faq__content">
+                                <p>В будь який зручний для вас час. Курс буде у вигляді онлайн-уроків, які ти зможеш
+                                    продивитись, коли заманеться. </p>
+                            </div>
+                        </div>
+                        <div class="faq__item close">
+                            <div class="faq__head">
+                                <span class="number">04</span>
+                                <h6>Чи будуть домашні завдання на курсах? </h6>
+                                <span class="icon"></span>
+                            </div>
+                            <div class="faq__content">
+                                <p>Так, на курсах передбачені домашні завдання. </p>
+                            </div>
+                        </div>
+                        <div class="faq__item close">
+                            <div class="faq__head">
+                                <span class="number">05</span>
+                                <h6>Чи будуть онлайн-зустрічі зі спікерами? </h6>
+                                <span class="icon"></span>
+                            </div>
+                            <div class="faq__content">
+                                <p>Так, щомісяця ми будемо організовувати онлайн зустрічі, де кожен зможе поставити
+                                    питання до спікера та отримати відповідь. </p>
+                            </div>
+                        </div>
+                        <div class="faq__item close">
+                            <div class="faq__head">
+                                <span class="number">06</span>
+                                <h6>Чим відрізняється придбання 1 курсу від оформлення підписки на 1 місяць? </h6>
+                                <span class="icon"></span>
+                            </div>
+                            <div class="faq__content">
+                                <p>Коли ти купуєш підписку на 1 місяць або на 1 рік, ти отримаєш доступ до всіх наявних
+                                    курсів на платформі + доступ до закритого клубу однодумців, де зможеш отримувати
+                                    додаткову цінну інформацію, обмінюватись доступними контактами та навчатись
+                                    додатково до матеріалів на курсі. </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
-        <footer>
+        <footer class="footer">
+            <div class="footer__container">
+                <div class="footer__info">
+                    <img class="footer__logo" src="images/logo-white.svg" alt="logo">
+                    <p>Від ноунейма до артиста</p>
+                </div>
+                <div class="footer__socail">
+                    <p>Наші соцмережі</p>
+                    <a href="https://www.instagram.com/enko_music/" target="_blank"><img src="images/instagram.svg" alt=""></a>
+                    <a href="https://www.tiktok.com/@enko_music" target="_blank"><img src="images/tiktok.svg" alt=""></a>
+                </div>
+                <div class="footer__mail">
+                    <p>Пошта</p>
+                    <a href="mailto:info@enkomusic.com">info@enkomusic.com </a>
+                </div>
+                <div class="footer__phone">
+                    <p>Телефон</p>
+                    <a href="tel:">info@enkomusic.com </a>
+                </div>
+                <div class="footer__cards">
+                    <img src="images/mastercard.svg" alt="mastercard">
+                    <img src="images/visa.svg" alt="visa">
+                </div>
+                <div class="footer__docs">
+                    <a href="" target="_blank">договір оферти</a>
+                    <a href="" target="_blank">політика конфіденційності</a>
+                </div>
+            </div>
         </footer>
     </div>
-    <script src="js/jquery.js"></script>
-    <script src="js/slick.min.js"></script>
+    <script src="js/splide.min.js"></script>
+    <script src="js/splide-extension-grid.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 

@@ -1,67 +1,90 @@
 // ---------------------mobile menu
 
-let menuBtn = document.querySelectorAll('.header__burgerIcon');
-let menu = document.querySelector('.header__menu');
-let menuLinks = document.querySelectorAll('.header__menu-item');
+let menuBtn = document.querySelectorAll(".header__burgerIcon");
+let menu = document.querySelector(".header__menu");
+let menuLinks = document.querySelectorAll(".header__menu-item");
 
-menuBtn.forEach(btn => {
-    btn.addEventListener('click', () => {
-        toggleMenu();
-    });
+menuBtn.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    toggleMenu();
+  });
 });
-menuLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        toggleMenu();
-    });
+menuLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    toggleMenu();
+  });
 });
 function toggleMenu() {
-    menu.classList.toggle('active');
-    document.body.classList.toggle('lock');
+  menu.classList.toggle("active");
+  document.body.classList.toggle("lock");
 }
-window.addEventListener('scroll', () => {
-    document.body.classList.remove('lock');
+window.addEventListener("scroll", () => {
+  document.body.classList.remove("lock");
 });
-
-
-
 
 // ----------------------end mobile menu
 
+// --------------------- faq section
+let accItem = document.getElementsByClassName("faq__item");
+let accHD = document.getElementsByClassName("faq__head");
+console.log(accItem);
+console.log(accHD);
 
+for (i = 0; i < accHD.length; i++) {
+  accHD[i].addEventListener("click", toggleItem, false);
+}
 
+function toggleItem() {
+  let itemClass = this.parentNode.className;
+  for (i = 0; i < accItem.length; i++) {
+    accItem[i].className = "faq__item close";
+  }
+  if (itemClass == "faq__item close") {
+    this.parentNode.className = "faq__item open";
+  }
+}
 
-$(function () {
-    const $slider = $('.courses__slider');
-    const $progressBar = $('.courses__slide__progress');
-    const $progressBarLabel = $('.slider__label');
+// --------------------- sliders 
+var funcs = [];
+var splides = document.querySelectorAll('.splide-slider');
 
-    $slider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-        var calc = ((nextSlide) / (slick.slideCount - 1)) * 100;
+for (let i = 0; i < splides.length; i++) {
 
-        $progressBar
-            .css('background-size', calc + '% 100%')
-            .attr('aria-valuenow', calc);
+	funcs[i] = function() {
+	  let splideElement = splides[i];
+	  var splideClassname = splideElement.classList[0];	
+			  
+      var splideDefaultOptions = {
+        gap: "30px",
+        perPage: 3,
+        pagination: false,
+        autoWidth: true,
+        breakpoints: {
+          800: {
+          perPage: 1,
+          },
+        },
+        breakpoints: {
+          480: {
+          perPage: 1,
+          gap: '20px',
+          },
+        },
+      };
+				  
+	  var splide = new Splide( splideElement, splideDefaultOptions );
+	  
+	  splide.on( 'mounted move', function () {
+	  var getBar = '.'+ splideClassname + ' .my-slider-progress-bar';
+	  var bar = splide.root.querySelector(getBar);	
+	  var end = splide.Components.Controller.getEnd() + 1;
+	  bar.style.width = String( 100 * ( splide.index + 1 ) / end ) + '%';
+	  });
+			  
+	  splide.mount();
 
-        $progressBarLabel.text(calc + '% completed');
-    });
-
-    $slider.slick({
-        variableWidth: true,
-        speed: 400,
-        infinite: true,
-        arrows: true,
-        slidesToShow: 4,
-        slidesToScroll: 1,
-
-        responsive: [
-            {
-                breakpoint: 769, 
-                settings: {
-                    slidesToShow: 2, 
-                    slidesToScroll: 1,
-                }
-            }
-        ]
-    });
-});
-
+	};
+}
+for (var j = 0; j < splides.length; j++) {
+		funcs[j]();
+}
